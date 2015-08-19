@@ -20,6 +20,7 @@ player1Turn = function(i) {
 
 checkForWinner = function (gameState) {
   //make a base mask for each type of win, move it across each row,col, AND it to remove all other moves, see if sum ==3
+  if (getCardinality(gameState) === 9) return 'tie';
   const rowMask = parseInt('111', 2);
   const colMask = parseInt('1001001', 2);
   const lrDiagMask = parseInt('100010001', 2);

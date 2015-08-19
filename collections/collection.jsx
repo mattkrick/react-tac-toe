@@ -20,6 +20,11 @@ Meteor.methods({
 });
 
 function gameStateIsLegit(oldState, newState) {
+  //make sure x is always first & that neither go out of turn
+  let countMask = parseInt('111111111',2);
+  let xCount = getCardinality((countMask) & newState);
+  let oCount = getCardinality((countMask << 9) & newState);
+  if (xCount > oCount +1 || oCount > xCount) return false;
   //XOR the old & new game state to determine how many changes were made
   let changesMade = getCardinality(oldState ^ newState);
   //make sure the new game state did not remove a move (not critical, just annoying)
