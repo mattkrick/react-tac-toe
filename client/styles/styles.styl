@@ -1,0 +1,51 @@
+@import "nib"
+@import "icons.import"
+
+html
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.homeCard
+  height 400px
+  display flex
+  justify-content center
+  align-items: center
+.homeCardActions
+  display flex
+  justify-content: space-around
+.spinner
+  display flex
+  justify-content: center
+  align-items center
+.game
+  align-items: center;
+  flex-direction: column
+  display flex
+  margin 50px 0
+.currentStatus
+  text-align center
+  padding 8px
+.board
+  display flex
+  flex-wrap wrap
+  width 354px
+  background #455A64
+  border-radius 3px
+  border 3px #455A64 solid
+.square
+  width 100px
+  height 100px
+  margin 5px
+  border 3px #455A64 solid
+  border-radius 6px
+  background #81D4FA
+  cursor pointer
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight 800
+  font-size 80px
+.square:hover:not(.disabled)
+  background #0277BD
+.square.disabled
+  cursor default
+.newGame
+  padding-top 16px
